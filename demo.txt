@@ -1,0 +1,3 @@
+The cat is dancing.
+The dog is barking.
+A wild cat appears.
