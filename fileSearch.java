@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Search {
+public class FileSearch {
 
     public static void main(String[] args) {
         //new changes from my pull request
@@ -23,12 +23,19 @@ public class Search {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
-            int lineNumber = 1;
+
+            
+            
             while ((line = reader.readLine()) != null) {
-                if (line.contains(pattern)) {
-                    System.out.println(lineNumber + ": " + line);
+
+                String[] split = line.split("[\\s]");
+
+                for (String word : split) {
+                    if (word.equals(pattern)) {
+                        System.out.println(line);
+                    }
                 }
-                lineNumber++;
+                
             }
         } catch (IOException e) {  
             System.out.println("Error when reading file" + e.getMessage());
