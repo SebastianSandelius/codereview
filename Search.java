@@ -29,7 +29,7 @@ public class Search {
                 }
                 lineNumber++;
             }
-        } catch (IOException e) {
+        } catch (IOException e) {  
             System.out.println("Error when reading file" + e.getMessage());
         }
     }
