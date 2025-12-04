@@ -6,6 +6,7 @@ import java.io.IOException;
 public class Search {
 
     public static void main(String[] args) {
+        //new changes from my pull request
         if (args.length != 3) {
             System.out.println("Usage: search <pattern> <file>");
             return;
