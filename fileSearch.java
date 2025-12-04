@@ -24,15 +24,18 @@ public class FileSearch {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
 
-            String lowerPattern = pattern.toLowerCase();
+            
             
             while ((line = reader.readLine()) != null) {
 
-                String lowerLine = line.toLowerCase();
+                String[] split = line.split("[\\s]");
 
-                if (lowerLine.contains(lowerPattern)) {
-                    System.out.println(line);
+                for (String word : split) {
+                    if (word.equals(pattern)) {
+                        System.out.println(line);
+                    }
                 }
+                
             }
         } catch (IOException e) {  
             System.out.println("Error when reading file" + e.getMessage());
